@@ -19,4 +19,14 @@ class StackoverflowApi():
         
         return requests.get(url + self.site)
 
+    def advanceSearch(self, intitle:str=None, tagged:str=None, accepted:bool=False, page:int =1,pagesize:int = 10,order:str = 'desc', sort:str='relevance'):
+        
+        url =self.root+ 'search/advanced?page='+str(page)+'&pagesize='+str(pagesize)+'&order='+order+'&sort='+sort+ '&accepted='+str(accepted)
+
+        if tagged != None:
+            url+='&tagged='+tagged
+        if intitle!= None and len(intitle.strip())> 3:
+            url+='&intitle='+intitle
+        
+        return requests.get(url + self.site)
     
