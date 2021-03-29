@@ -27,10 +27,9 @@ insertTag = "INSERT INTO tags (tag) VALUES (?)"
 selectTag = "SELECT * FROM tags WHERE tag = ?"
 
 queryParams=('python',)
-
+script = [("INSERT INTO questions(id,title, content, link, answer) VALUES (?,?,?,?,?)",[1,'hola','hola', 'hola', 'hola']),("INSERT INTO questions(id,title, content, link, answer) VALUES (?,?,?,?,?)",[2,'hola','hola', 'hola', 'hola'])]
 db = SqliteDB('db/Stackoverflow.db')
 db.connect()
-resp = db.executeQuery(selectTag,queryParams)
-for row in resp.fetchall():
-    print(row)
+resp = db.executeQuery(deleteQuestions)
+
 db.close()

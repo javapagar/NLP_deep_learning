@@ -36,11 +36,38 @@ class SqliteDB():
                 resp = self.cursorObj.execute(query,params)
             else:
                 resp =self.cursorObj.execute(query)
-
+            
             self.con.commit()
+
             return resp
         except sqlite3.Error as er:
             print("error al ejecutar:",query)
             print(' '.join(er.args))
             return None
     
+    
+    def executeTransaction(self,queries:list):
+        resp =None
+
+        if self.con != None and self.cursorObj == None :
+            self.cursorObj = self.con.cursor()
+
+        try:
+
+            self.cursorObj.execute('begin')
+
+            for q in queries:
+
+                if len(q) == 2:
+                    resp = self.cursorObj.execute(q[0],q[1])
+                else:
+                    resp =self.cursorObj.execute(q[0])
+            
+            self.con.commit()
+
+            return resp
+        except sqlite3.Error as er:
+            print("error al ejecutar script")
+            print(' '.join(er.args))
+            self.con.rollback()
+            return None

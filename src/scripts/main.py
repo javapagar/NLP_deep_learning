@@ -24,6 +24,7 @@ questions = respjson['items']
 for question in questions:
     tags = question['tags']
     idTags =[]
+    
     for t in tags:
         resp = db.executeQuery(FIND_TAG,(t,))
         rows = resp.fetchall()
@@ -34,7 +35,7 @@ for question in questions:
         else:
             for row in rows:
                 idTags.append(row[0])
-    print(idTags)
+    
     if 'machine-learning' in tags and 'python' in tags:
         questionId = question['question_id']
         link = question['link']
