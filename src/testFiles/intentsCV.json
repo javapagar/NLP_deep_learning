@@ -1,6 +1,6 @@
 {"intents": [
     {"tag": "greeting",
-     "patterns": ["Hi", "Hey", "Is anyone there?","Hola", "Eo",  "Hello", "Yep!","Qué tal?", "Buenos días","Buenas tardes", "Javi Bot"],
+     "patterns": ["Hi", "Hey", "Is anyone there?","Hola", "Eo",  "Hello", "Yep!", "Buenos días","Buenas tardes", "Javi Bot"],
      "responses": ["Hola, qué tal estas?", "Hola", "Qué tal?"]
     },
     {"tag": "goodbye",
@@ -24,7 +24,7 @@
         "responses": ["Estoy formandome como Data Scientist", "Estoy estudiando  Machine Leraning"]
         },
     {"tag": "studies",
-        "patterns": ["Formación", "Qué has esudiado?", "Tienes estudios superiores"],
+        "patterns": ["Formación", "Qué has estudiado?", "Tienes estudios superiores"],
         "responses": ["Me falta del TFG para obtener el grado de Ingeniería Informática y, actualmente, estoy haciendo un Bootcamp sobre Data Science"]
     },
     {"tag": "experience",
