@@ -1,38 +1,50 @@
 {"intents": [
     {"tag": "greeting",
-     "patterns": ["Hi", "Hey", "Is anyone there?","Hola", "Eo",  "Hello", "Yep!", "Buenos días","Buenas tardes", "Javi Bot"],
-     "responses": ["Hola, qué tal estas?", "Hola", "Qué tal?"]
+     "patterns": ["Hay alguien ahí allí?", "Hey", "Hola", "Eo",  "Hello", "Yep!", "Buenos días","Buenas tardes", "JaBot"],
+     "responses": ["Hola, qué tal estas?", "Hola", "Qué tal?","Encantado de saludarte","Bienvenido!"]
     },
     {"tag": "goodbye",
-     "patterns": ["Bye", "See you later", "Goodbye","Adiós", "Hasta luego", "Hasta siempre"],
-     "responses": ["Adiós", "Pasa un buen día", "Espero que hablemos pronto"]
+     "patterns": ["Bye", "Que vaya bien!", "nos vemos!","Adiós", "Hasta luego", "Hasta siempre"],
+     "responses": ["Adiós", "Pasa un buen día", "Espero que hablemos pronto", "Vuelve pronto"]
     },
     {"tag": "thanks",
-     "patterns": ["Thanks", "Thank you", "That's helpful", "Thanks for the help","Gracias", "Ok", "Perfecto", "Muy bien"],
-     "responses": ["De nada", "Un placer"]
+     "patterns": ["Gracias", "Ok", "Perfecto", "Muy bien"],
+     "responses": ["De nada", "Un placer", "Me ha gustado ayudarte"]
     },
     {"tag": "about",
-     "patterns": [ "Who are you?", "What are you?", "Who you are?" ,"¿En qué puedes ayudarme?", "¿qué haces?","¿Para qué sirves?" ],
-     "responses": ["Me gustaría guiarte a través del CV de Javier Aparicio", "Puedo hablarte de la experiendcia profesional de Javier Aparicio"]
+     "patterns": [  "¿En qué puedes ayudarme?", "¿qué es lo que haces?","¿Para qué sirves?", "¿qué es lo que haces?", "¿cuál es tu cometido?", 
+                "¿para qué has sido entrenado?", "¿cuál es tu cometido?", "¿para qué has sido programado?"],
+     "responses": ["He sido entrenado para hablarte del Currículum de Javier Aparicio",
+                    "Contestaré preguntas profesionales sonbre Javier Aparicio",
+                    "Me gustaría guiarte a través del CV de Javier Aparicio", 
+                    "Puedo hablarte de la experiendcia profesional de Javier Aparicio",
+                "Me han programado para hablar sobre la carrera profesional de Javier Aparicio"]
     },
     {"tag": "name",
-    "patterns": ["what is your name", "what should I call you", "¿Quién eres?", "¿Cómo te llamas?", "whats your name?"],
-    "responses": ["Mi nombre es Bot, Javi Bot", "Me llamo Javi Bot", "Puedes dirigirte a mi como Javi Bot"]
+    "patterns": [ "¿Quién eres?", "¿Cómo te llamas?", "¿Con quién hablo?, "],
+    "responses": ["Mi nombre es Bot, JaBot", "Me llamo JaBot", "Puedes llamarme JaBot",
+                    "Soy un chatbot, JaBot es mi nombre"]
     },
     {"tag": "now",
-        "patterns": ["¿Qué haces actualmente?", "¿Dónde estás ahora?", "¿Dónde trabajas?"],
-        "responses": ["Estoy formandome como Data Scientist", "Estoy estudiando  Machine Leraning"]
+        "patterns": ["¿Qué haces actualmente?", "¿Dónde estás ahora?", "¿Dónde trabajas en el presente?", "¿y qué haces ahora?",
+                    "¿en este momento a qué te dedicas?" ],
+        "responses": ["Estoy formandome como Data Scientist", "Estoy espedializandome en Datos, análisis visualización y Machine Leraning"]
         },
     {"tag": "studies",
-        "patterns": ["Formación", "Qué has estudiado?", "Tienes estudios superiores"],
+        "patterns": ["¿qué formación tienes?", "Qué has estudiado?", "Tienes estudios superiores","qué has estudiado?"],
         "responses": ["Me falta del TFG para obtener el grado de Ingeniería Informática y, actualmente, estoy haciendo un Bootcamp sobre Data Science"]
     },
+    {"tag": "expert",
+        "patterns": ["¿qué perfil tienes?", "¿a qué te dedicas?", "cómo te defines","qué tipo de profesional eres?"],
+        "responses": ["Soy informático, analista programador y Data Scientist...", "Tengo un perfil tecnológico, especializado en desarrollo de software y datos"]
+    },
     {"tag": "experience",
-        "patterns": ["¿Qué has hecho?", "¿Dónde has trabajado?", "¿qué empresas?"],
+        "patterns": ["¿Qué has hecho ultimamente?", "¿Dónde has trabajado?", "¿qué empresas has trabajado?","has trabajado alguna vez?", 
+                    "hablame sobre la experiencia profesional" ],
         "responses": ["Ultimamente he estado en ANCERT y anteriormente estuve 14 años en el CSIC"]
     },
     {"tag": "ancert",
-        "patterns": ["ANCERT", "Agencia Notarial de Certificación", "último trabajo"],
+        "patterns": ["ANCERT", "Agencia Notarial de Certificación", "último trabajo", "qué hacías antes?"],
         "responses": ["En ANCERT hice labores de analista programador VBA para análisis de datos y Java para backend"]
     },
     {"tag": "csic",
@@ -47,13 +59,13 @@
     "patterns": ["qué te gustaría hacer en el futuro?", "después que termines el bootcamp", "trabajo ideal?","Te interesaría tabajar con nosotros"],
     "responses": ["Hasta el 18 de mayo no estaré disponible, me interesaría un puesto de Data Scientist, y me encanta desarrollar aplicaciones, no tendría ningún problema en incorporarme a un puesto acorde a esto"]
     },
-    {"tag": "createaccount",
-    "patterns": ["I need to create a new account", "how to open a new account", "I want to create an account", "can you create an account for me", "how to open a new account"],
-    "responses": ["You can just easily create a new account from our web site", "Just go to our web site and follow the guidelines to create a new account"]
+    {"tag": "contact",
+    "patterns": ["cómo puedo contactar", "cual es tu correo?", "tienes linkedin", "puedo escribirte", "puedo llamarte"],
+    "responses": ["Puedes contactar a través de mi apariciogarcia.j@gmail.com y mi linkedin es xxxxxx"]
     },
-    {"tag": "complaint",
-    "patterns": ["have a complaint", "I want to raise a complaint", "there is a complaint about a service"],
-    "responses": ["Please provide us your complaint in order to assist you", "Please mention your complaint, we will reach you and sorry for any inconvenience caused"]
+    {"tag": "portfolio",
+    "patterns": ["utilizas repositorios", "Qué has desarrollado?", "Podrías enseñarme algo de tú trabajo", "¿qué programas tienes?", "¿tienes git hub?", "usas github"],
+    "responses": ["Sí, mi repositorio es...", "Mi cuenta de github es javapagar"]
     }
 ]
 }
