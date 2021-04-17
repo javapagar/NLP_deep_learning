@@ -27,7 +27,7 @@ for t in titles:
             for lev_content in level3_content:
                 user_guide.append({'level1':level1,'level2':level2,'level3':lev_content[0],'content' : lev_content[1]})
     else:
-        
+       
         global_content,level3_content=scrap.scrapPage() 
         user_guide.append({'level1':level1,'level2':'','level3':'','content' : global_content})
         for lev_content in level3_content:

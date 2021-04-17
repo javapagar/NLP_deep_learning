@@ -48,12 +48,85 @@ class WebScraping():
         
         return '\n'.join(content_list)
     
-    def scrapPageAllChildren(self):
-        level3_content =[]
-        section = self.html.find('div', class_='section')
-        elements = section.findChildren(recursive=False)
+    def scrapFirstSection(self,levels, firstSection):
+        #levels_aux= levels.copy()
+        if len(levels) ==2:
+            levels.pop(1)
+        children = firstSection.findChildren(recursive=False)
+        content = []
+        for child in children:
+                
+            if 'p' == child.name:
+                 content.append(child.text)
+            elif 'div' == child.name:
+                type = child['class']
+                if 'math' in type:
+                    content.append('mathForm')
+                elif 'figure' in type:
+                    content.append('figure')
+                elif 'highlight-default' in type:
+                    content.append('example')
+                elif 'topic' in type:
+                    content.append('example')
+                elif 'section' in type:
+                    break
+                else:
+                    print(child['class'])
+            elif 'h' in child.name:
+                levels.append(child.text.split('.')[-1].strip())
+                #levels_aux.append(child.text)
         
-        for child in elements:
-            print (child.name)
+        return (levels,"\n".join(content))
 
-       
+    def scrapAllPage(self,levels):
+        level_content=[]
+        
+        firstSection = self.html.find('div', class_='section')
+
+        level_content.append(self.scrapFirstSection(levels,firstSection))
+
+        sections = firstSection.find_all('div', class_='section', recursive=False)
+
+        for sec in sections:
+
+            level_content.extend(self.scrapSection(levels,sec))
+
+        return level_content
+
+    def scrapSection(self, levels, section):
+        levels_aux=levels.copy()
+
+        level_content =[]
+
+        children = section.findChildren(recursive=False)
+        
+        content = []
+
+        for child in children:
+
+            if 'p' == child.name:
+                 content.append(child.text)
+            elif 'div' == child.name:
+                type = child['class']
+                if 'math' in type:
+                    content.append('mathForm')
+                elif 'figure' in type:
+                    content.append('figure')
+                elif 'highlight-default' in type:
+                    content.append('code')
+                elif 'topic' in type:
+                    content.append('example')
+                elif 'section' in type:
+                    level_content.extend(self.scrapSection(levels_aux,child))
+                else:
+                    print(child['class'])
+            elif 'h' in child.name:
+                title= child.text.split('.')[-1].strip()
+                level_int= len(child.text.split('.')[:-1])
+                if level_int > len(levels):
+                    levels_aux.append(title)
+        
+        level_content.append((levels_aux,"\n".join(content)))
+
+        return level_content
+                
