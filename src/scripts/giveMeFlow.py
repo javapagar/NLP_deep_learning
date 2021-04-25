@@ -1,4 +1,5 @@
-#!pip install gtts
+#pip install gtts
+#pip install mutagen
 from gtts import gTTS
 import os
 import time
