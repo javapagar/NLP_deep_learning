@@ -8,7 +8,7 @@ from mutagen.mp3 import MP3
 
 #función para cuardar y reproducir mp3
 def saySomething(somethingToSay):
-    myobj = gTTS(text=somethingToSay, lang="es", slow=True)
+    myobj = gTTS(text=somethingToSay, lang="es", slow=False)
     myobj.save("texto.mp3")
     os.system("texto.mp3")
     
@@ -23,14 +23,15 @@ rap = ["rimando y en mi camino,",
 "que se han contrado en la cartera,",
 "esta es la cara de mi "]
 
-rap2 = ["a mi por lo que no te levanta el alma",
+
+rap2 = ["ey je je",
+        "a mi por lo que no te levanta el alma",
         "y la fama de estar lo que me llevo a la tumba,",
         "es la pera no te he contado", 
         "no me llevo a la tumba,",
         "es la espalda es mi sombra si disparan,",
         "sobre el mil de antes",
-        "de la polla y la tumba,",
-        "la vida es"]
+        "de la polla y la rumba, la vida es"]
 
 
 for i in range(2):
